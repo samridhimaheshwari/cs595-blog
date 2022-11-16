@@ -25,16 +25,15 @@ Several approaches have come up to provide alternative solutions such as VIT Tr
 
 # Original Perceiver
 
-The Perceiver architecture tries to reduce this space complexity to a limit such that it does not become quadratic. The authors in the Perceiver paper added a **cross attention** layer between the input sequence and multi-headed attention . 
+The Perceiver architecture tries to reduce this space complexity to a limit such that it does not become quadratic. The authors in the Perceiver paper added a cross attention layer between the input sequence and multi-headed attention . 
 
 ![Untitled](CS595J%20Seminar%20Blog%20-%20Perceiver%20IO%2013300deec0184fda91b564a47f46f80d/Untitled%202.png)
 
-In attention module, where we perform matrix multiplication between Query and Key vectors where both vectors were of size m x m (length of input sequence), in cross attention, the query vector is of size n where n < m. Using this new length, our space complexity reduces to m x n. This query vector of size n is called the latent array. A latent array acts as a filter of inflow of data into the multi-headed attention. The latent vector queries only a few input sequences ****from all of the input sequences, however, in the next step the input sequence is being queried again by the latent array. Thus, it acts similar to an RNN architecture where important features are moved to the next steps and weights are shared amongst them. Because of this functioning of the latent array, this architecture can work with any kind of input sequences, from text to image to videos even to word cloud.
+In attention module, where we perform matrix multiplication between Query and Key vectors where both vectors were of size m x m (length of input sequence), in cross attention, the query vector is of size n where n < m. Using this new length, our space complexity reduces to m x n. This query vector of size n is called the latent array. A latent array acts as a filter of inflow of data into the multi-headed attention. The latent vector queries only a few input sequences from all of the input sequences, however, in the next step the input sequence is being queried again by the latent array. Thus, it acts similar to an RNN architecture where important features are moved to the next steps and weights are shared amongst them. Because of this functioning of the latent array, this architecture can work with any kind of input sequences, from text to image to videos even to word cloud.
 
 # Perceiver IO
 
-Rather than output a single category, Perceiver IO aims to have the same level of generality with
-respect to its outputs **as the Perceiver has with respect to its inputs. It produces arbitrary sized output arrays. We can predict each element of the output array using another attention module by querying **the same latent array used in the encoder module. This cross attention processing uses a query feature vector unique to the desired output element. In other words, a query array is defined with the same number of elements as the desired output. The queries may be hand-designed, learned embeddings, or a simple function of the input. They attend to the latents to yield an output array of the desired shape.
+Rather than output a single category, Perceiver IO aims to have the same level of generality with respect to its outputs as the Perceiver has with respect to its inputs. It produces arbitrary sized output arrays. We can predict each element of the output array using another attention module by querying the same latent array used in the encoder module. This cross attention processing uses a query feature vector unique to the desired output element. In other words, a query array is defined with the same number of elements as the desired output. The queries may be hand-designed, learned embeddings, or a simple function of the input. They attend to the latents to yield an output array of the desired shape.
 
 ![Untitled](CS595J%20Seminar%20Blog%20-%20Perceiver%20IO%2013300deec0184fda91b564a47f46f80d/Untitled%203.png)
 
@@ -64,4 +63,4 @@ In the results, the Perceiver IO achieved state of the art results on tasks with
 
 # Conclusion
 
-In conclusion, Perceiver IO is an architecture capable of handling general purpose inputs and outputs while scaling linearly in both input and output sizes. This architecture achieves good results in a wide variety of settings, making it a promising candidate for general purpose **neural network architecture. Perceiver IO leverages the expressive power of latent attention and uses learned queries to expose a simple and unified interface that can handle multimodal and multitask settings.
+In conclusion, Perceiver IO is an architecture capable of handling general purpose inputs and outputs while scaling linearly in both input and output sizes. This architecture achieves good results in a wide variety of settings, making it a promising candidate for general purpose neural network architecture. Perceiver IO leverages the expressive power of latent attention and uses learned queries to expose a simple and unified interface that can handle multimodal and multitask settings.
