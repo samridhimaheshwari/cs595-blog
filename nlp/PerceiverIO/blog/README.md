@@ -22,7 +22,7 @@ Take language translation as an example, which is a frequent application for the
 
 Inside the self-attention module, we feed the input to three distinct fully connected layers to create query, key and value vectors. The queries and keys undergo dot product matrix multiplication to produce a scoring matrix. The score matrix determines how much focus should a word be put on other words. Then a soft max layer is added to get the highest probability values and this helps our model to provide more confidence on which words to attend to. And then it gets multiplied to value vector to get output vector. Because of the dot product matrix multiplication between Query and Key vectors, the complexity of transformers instantly shoots upwards quadratically in space as input increases. 
 
-For language tasks, then max length of input sequences would be batched to around 1000 or so which can be handled given the strength of today’s hardware. However, when considering images, input sequences would be all the pixels in the image**.** For a simple image of 256 x 256, the complexity of input sequence is 65536 x 65536 which is slow and hard to handle computationally. 
+For language tasks, then max length of input sequences would be batched to around 1000 or so which can be handled given the strength of today’s hardware. However, when considering images, input sequences would be all the pixels in the image. For a simple image of 256 x 256, the complexity of input sequence is 65536 x 65536 which is slow and hard to handle computationally. 
 .
 
 ![Untitled](CS595J%20Seminar%20Blog%20-%20Perceiver%20IO%2013300deec0184fda91b564a47f46f80d/Untitled%201.png)
