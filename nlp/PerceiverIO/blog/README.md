@@ -1,4 +1,10 @@
-# CS595J Seminar Blog - Perceiver IO
+---
+title: Perceiver IO
+author: Samridhi Maheshwari
+date: 2022-11-16
+tag:
+ - Transformers, Deep Learning, NLP
+---
 
 # Introduction
 
@@ -64,3 +70,6 @@ In the results, the Perceiver IO achieved state of the art results on tasks with
 # Conclusion
 
 In conclusion, Perceiver IO is an architecture capable of handling general purpose inputs and outputs while scaling linearly in both input and output sizes. This architecture achieves good results in a wide variety of settings, making it a promising candidate for general purpose neural network architecture. Perceiver IO leverages the expressive power of latent attention and uses learned queries to expose a simple and unified interface that can handle multimodal and multitask settings.
+
+## Reference 
+- Andrew Jaegal et al. Perceiver. PMLR 139, 2021. 
