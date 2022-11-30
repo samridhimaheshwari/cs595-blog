@@ -8,11 +8,11 @@ tag:
 
 # Introduction
 
-By processing high-dimensional inputs from modalities as diverse as vision, audio, touch, proprioception, etc., humans are able to perceive and comprehend their surroundings. However, the majority of machine learning models use modality-specific architectures and work with a predefined set of inputs and outputs that are connected to a single task. Every time inputs change, this forces researchers to redesign their architectures.
+Humans are able to perceive and comprehend their surroundings by processing high dimensional inputs from mediums as diverse as vision, audio, touch, proprioception, etc. However, the majority of machine learning models use modality specific architectures and work with a fixed set of inputs and outputs that are connected to a single task. Every time inputs change, this forces researchers to redesign their architectures.
 
 Designed to support a variety of inputs sizes, the recently proposed Perceiver architecture (Andrew Jaegle, 2021) produces excellent performance on domains like image, audio, point clouds, etc while scaling linearly in computation and memory with input size. However, this model can only generate simple outputs such as class scores.
 
-To broaden the Perceiver model, the team responsible for creating Perceiver has proposed Perceiver IO, a general purpose neural network architecture that can easily integrate and transform arbitrary information for arbitrary tasks. Perceiver IO maintains Perceiver’s appealing properties; scaling linearly with both input and output sizes and achieves outstanding results on tasks with highly structured output spaces, such as language and visual understanding.
+To broaden the Perceiver model, the team responsible for creating Perceiver has proposed Perceiver IO, a general purpose neural network architecture that can easily integrate and transform arbitrary information for arbitrary tasks. Perceiver IO has the same properties as the Perceiver - it scales linearly with both input and output sizes and achieves outstanding results on tasks with highly structured output spaces, such as language and visual understanding.
 
 # Transformers aren’t all you need
 
